@@ -8,7 +8,8 @@ redirect_from:
   - /about.html
 ---
 
-I earned my Engineer degree and Master degree in Computer Science from Hanoi University of Science and Technology (Hanoi, Vietnam). Currently, I am a Ph.D. Student at National Institute of Informatics (Tokyo, Japan).
+I earned my Engineer degree (2015) and Master degree (2019) in Computer Science from Hanoi University of Science and Technology (Hanoi, Vietnam). In 2022, I finished my PhD in Informatics at Department of Informatics, School of Multidisciplinary Sciences, The Graduate University for Advanced Studies (SOKENDAI).
+Currently, I am a project researcher at Inoue's lab, Principles of Informatics Research Division, National Institute of Informatics (Tokyo, Japan).
 
 Research topics: 
 ======
