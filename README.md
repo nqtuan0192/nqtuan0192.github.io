@@ -34,20 +34,4 @@ This importer is specific to the eight archived records. To add publications, ap
 
 The reader supports nested braces, quoted fields, macros, concatenation, common LaTeX accents, and standard author names. It is a lightweight formatter rather than a full TeX or CSL citation engine.
 
-## GitHub Pages
 
-Push the files to GitHub, then choose **Settings → Pages → Deploy from a branch**, your branch, and **/ (root)**. No build step is required. Relative asset paths support both user and project sites.
-
-## Design and sources
-
-System monospace fonts, 18px body text, generous line spacing, and responsive layouts. The supplied Alacritty palettes are defined in `assets/style.css`; `hl-blue`, `hl-green`, etc. provide text highlighting. Bold highlights use normal colors in light mode and bright colors in dark mode. Small dark-mode links and magenta labels use bright variants for contrast.
-
-Profile information and portrait were retrieved from:
-- https://soict.hust.edu.vn/ts-nguyen-quoc-tuan.html
-- https://soict.hust.edu.vn/en/ph-d-nguyen-quoc-tuan.html
-
-The two pages agree on degrees, affiliation, research areas, institutional email, scholarships, and the eight selected publications. Profile and bibliography sources were checked on 2026-10-14. No analytics or backend services are included.
-
-## Historical background and profile links
-
-Historical education and project-research details, GitHub, Google Scholar, and ORCID links were checked against https://profile.nqtuan0192.me/ on 2026-10-14. The archived page describes the Ph.D. as awarded by SOKENDAI and lists NII as the research institution. It calls the 2015 qualification an engineering degree, while SoICT abbreviates it as B.S.; this site uses the more specific engineering designation. The old page's Ph.D.-student label and “currently” project-researcher wording are not reused as present-day job titles; the present affiliation follows SoICT. The Location button points to HUST in Hanoi, not the historical Tokyo location.
