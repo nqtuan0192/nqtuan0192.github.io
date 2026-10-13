@@ -1,31 +1,53 @@
-A Github Pages template for academic websites. This was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License. See LICENSE.md.
+# Nguyen Quoc Tuan — Researcher profile
 
-I think I've got things running smoothly and fixed some major bugs, but feel free to file issues or make pull requests if you want to improve the generic template / theme.
+Static, bilingual (English/Vietnamese) academic profile for Nguyễn Quốc Tuấn, SoICT, Hanoi University of Science and Technology. The layout is inspired by Minimal-style academic pages and i3 workspaces. Light mode is the default; language and theme preferences are stored locally.
 
-### Note: if you are using this repo and now get a notification about a security vulnerability, delete the Gemfile.lock file. 
+## Run locally
 
-# Instructions
+Requires Node.js 18 or later; no installation or dependencies needed.
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+```sh
+npm run dev
+npm test
+```
 
-See more info at https://academicpages.github.io/
+Open http://localhost:3000. Use HTTP rather than opening the HTML file directly so the browser can load modules and the bibliography.
 
-## To run locally (not on GitHub Pages, to serve on your own computer)
+## Update content
 
-1. Clone the repository and made updates as detailed above
-1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
-1. Run `bundle clean` to clean up the directory (no need to run `--force`)
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `bundle exec jekyll liveserve` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+- `index.html` contains the page structure and English fallback content.
+- `assets/i18n.js` holds the English/Vietnamese text. Update the matching translation keys when editing text marked with `data-i18n`.
+- `assets/profile-portrait.webp` is the optimized 360×540 portrait (8.45 kB) from the supplied SoICT profile. The page prefers WebP and retains `assets/profile-portrait.jpg` as a fallback. The displayed 164px frame has sufficient resolution for 2× screens. To replace the portrait, edit both image paths in `index.html` and the `photoAlt` translations.
+- `publications.bib` contains eight selected publications from the SoICT profiles. The page automatically formats, sorts, searches, and filters these records, with DOI links and BibTeX downloads. This is a selected list, not a claim of a complete publication history.
 
-# Changelog -- bugfixes and enhancements
+## Bibliography sources
 
-There is one logistical issue with a ready-to-fork template theme like academic pages that makes it a little tricky to get bug fixes and updates to the core theme. If you fork this repository, customize it, then pull again, you'll probably get merge conflicts. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch. 
+Original BibTeX exports from Crossref are preserved in `data/bibtex-sources.json`. See `data/bibliography-notes.md` for author-name normalization, publication types, and the 2021 online / 2022 journal-year distinction.
 
-To support this, all changes to the underlying code appear as a closed issue with the tag 'code change' -- get the list [here](https://github.com/academicpages/academicpages.github.io/issues?q=is%3Aclosed%20is%3Aissue%20label%3A%22code%20change%22%20). Each issue thread includes a comment linking to the single commit or a diff across multiple commits, so those with forked repositories can easily identify what they need to patch.
+Regenerate the bibliography from these archived exports, without network access:
+
+```sh
+node scripts/import-bibliography.mjs
+```
+
+This importer is specific to the eight archived records. To add publications, append valid entries to `publications.bib` and maintain unique keys and DOIs. Rerunning the archive importer replaces the file with the original eight records.
+
+The reader supports nested braces, quoted fields, macros, concatenation, common LaTeX accents, and standard author names. It is a lightweight formatter rather than a full TeX or CSL citation engine.
+
+## GitHub Pages
+
+Push the files to GitHub, then choose **Settings → Pages → Deploy from a branch**, your branch, and **/ (root)**. No build step is required. Relative asset paths support both user and project sites.
+
+## Design and sources
+
+System monospace fonts, 18px body text, generous line spacing, and responsive layouts. The supplied Alacritty palettes are defined in `assets/style.css`; `hl-blue`, `hl-green`, etc. provide text highlighting. Bold highlights use normal colors in light mode and bright colors in dark mode. Small dark-mode links and magenta labels use bright variants for contrast.
+
+Profile information and portrait were retrieved from:
+- https://soict.hust.edu.vn/ts-nguyen-quoc-tuan.html
+- https://soict.hust.edu.vn/en/ph-d-nguyen-quoc-tuan.html
+
+The two pages agree on degrees, affiliation, research areas, institutional email, scholarships, and the eight selected publications. Profile and bibliography sources were checked on 2026-10-14. No analytics or backend services are included.
+
+## Historical background and profile links
+
+Historical education and project-research details, GitHub, Google Scholar, and ORCID links were checked against https://profile.nqtuan0192.me/ on 2026-10-14. The archived page describes the Ph.D. as awarded by SOKENDAI and lists NII as the research institution. It calls the 2015 qualification an engineering degree, while SoICT abbreviates it as B.S.; this site uses the more specific engineering designation. The old page's Ph.D.-student label and “currently” project-researcher wording are not reused as present-day job titles; the present affiliation follows SoICT. The Location button points to HUST in Hanoi, not the historical Tokyo location.
