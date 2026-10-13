@@ -354,3 +354,10 @@ html[lang="en"] .language-en, html[lang="vi"] .language-vi { font-weight: 700; t
 @media (min-width: 600px) and (max-width: 760px) {
   .profile-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* Icon-only theme control; the accessible label describes its next action. */
+#theme-toggle { width: 44px; min-height: 44px; padding: 0; justify-content: center; flex-shrink: 0; }
+#theme-icon, #theme-icon svg { display: block; }
+#theme-icon .icon-sun { display: none; }
+:root[data-theme="dark"] #theme-icon .icon-moon { display: none; }
+:root[data-theme="dark"] #theme-icon .icon-sun { display: block; }

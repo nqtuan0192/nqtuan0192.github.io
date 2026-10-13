@@ -7,7 +7,7 @@ function syncTheme() {
   const dark=document.documentElement.dataset.theme==='dark';
   themeButton.setAttribute('aria-pressed',String(dark));
   themeButton.setAttribute('aria-label',t(dark?'switchLight':'switchDark'));
-  document.querySelector('#theme-icon').textContent=t(dark?'dark':'light');
+  themeButton.setAttribute('title',t(dark?'switchLight':'switchDark'));
   document.querySelector('meta[name="theme-color"]')?.setAttribute('content',dark?'#000000':'#f6f5f4');
 }
 syncTheme();
