@@ -1,6 +1,6 @@
 # Nguyen Quoc Tuan — Researcher profile
 
-Static, bilingual (English/Vietnamese) academic profile for Nguyễn Quốc Tuấn, SoICT, Hanoi University of Science and Technology. The layout is inspired by Minimal-style academic pages and i3 workspaces. Light mode is the default; language and theme preferences are stored locally.
+Static, bilingual (English/Vietnamese) academic profile for Nguyễn Quốc Tuấn, SoICT, Hanoi University of Science and Technology. The layout is inspired by Minimal-style academic pages and i3 workspaces. Dark mode and English are the defaults; language and theme preferences are stored locally.
 
 ## Run locally
 
